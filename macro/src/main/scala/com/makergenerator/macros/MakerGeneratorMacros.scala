@@ -30,12 +30,12 @@ object MacroImpl {
 
     val fieldSetters = fields.map { field =>
       val fieldName = field.name.toTermName.decodedName.toString
-      val methodName = TermName(s"with${fieldName.capitalize}")
+      val functionName = TermName(s"with${fieldName.capitalize}")
       val paramName = field.name.toTermName
       val returnType: context.universe.Type = field.typeSignature
       val initializerName = initializerFieldName(context, fieldName)
       q"""
-        def $methodName($paramName: $returnType) = {
+        def $functionName($paramName: $returnType) = {
           $initializerName = $paramName
           this
         }
