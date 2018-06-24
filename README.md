@@ -34,4 +34,4 @@ val personMaker = aMaker[Person]
 val person = personMaker.withName("Joe").withAge(32).make
 ```
 
-It is still in POC stage, and for supports only field types `String`, `Int` and `UUID`
+It is still in POC stage, and for now supports only field types `String`, `Int` and `UUID`
